@@ -4,9 +4,8 @@ def main():
 	addr = ("localhost",17346)
 	sock.connect(addr)
 	for i in range (1,101):
-		print("here")
 		sock.sendall(str(i).encode())
 		msg = sock.recv(1024).decode()
-		print(msg)
+		print(str(i)+" -> "+msg)
 	sock.close()
 main()

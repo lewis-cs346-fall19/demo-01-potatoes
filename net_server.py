@@ -16,7 +16,6 @@ def main():
 					returnMsg = 1
 				else:
 					returnMsg = 3 *(int(msg)) + 1
-					print("///////////////////////////////////////////////")
 				connectedSock.sendall(str(returnMsg).encode())
 			except ConnectionAbortedError:
 				sock.close()

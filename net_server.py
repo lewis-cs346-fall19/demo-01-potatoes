@@ -10,13 +10,14 @@ def main():
 
 			try:
 				msg = connectedSock.recv(1024).decode()
-				if int(msg)%2==0:
-					returnMsg = int(msg)//2
-				elif int(msg)==1:
-					returnMsg = 1
-				else:
-					returnMsg = 3 *(int(msg)) + 1
-				connectedSock.sendall(str(returnMsg).encode())
+				if msg!="":
+					if int(msg)%2==0:
+						returnMsg = int(msg)//2
+					elif int(msg)==1:
+						returnMsg = 1
+					else:
+						returnMsg = 3 *(int(msg)) + 1
+					connectedSock.sendall(str(returnMsg).encode())
 			except ConnectionAbortedError:
 				sock.close()
 				break

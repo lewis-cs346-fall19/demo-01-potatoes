@@ -6,8 +6,8 @@ def main():
 	sock.listen(5)
 	while True:
 		(connectedSock, clientAddress) = sock.accept()
-		while True:
-
+		msg = "string"
+		while msg!="":
 			try:
 				msg = connectedSock.recv(1024).decode()
 				if msg!="":
